@@ -6,14 +6,9 @@ function RepositoryList() {
   const [repos, setRepos] = useState([]);
 
   useEffect(async () => {
-    const data = await getRepos('osotorrio');
-
-    setRepos(
-      data.map(repo => {
-        return { id: repo.id, name: repo.name };
-      })
-    );
-  });
+    const result = await getRepos('mgarcia');
+    setRepos(result);
+  }, []);
 
   return repos.map(repo => {
     return <RepositoryItem key={repo.id} repoName={repo.name} />;
