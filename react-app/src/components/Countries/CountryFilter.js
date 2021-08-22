@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Form from 'react-bootstrap/Form';
 import { CountriesContext } from '../../Contexts/CountriesContext';
 
 function CountryFilter() {
@@ -12,9 +13,11 @@ function CountryFilter() {
   };
 
   return (
-    <form>
-      <input onChange={changeHandle} placeholder="Type to filter out" />
-    </form>
+    <Form>
+      <Form.Group className="mb-3">
+        <Form.Control type="text" onChange={changeHandle} placeholder="Type to filter out" />
+      </Form.Group>
+    </Form>
   );
 }
 

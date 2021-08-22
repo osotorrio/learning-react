@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { CountriesContext } from '../../Contexts/CountriesContext';
 import { getAllCountries } from '../../Modules/countriesApi';
 import CountryItem from './CountryItem';
@@ -13,9 +14,13 @@ function CountryList() {
 
   if (!countries) return null;
 
-  return countries.filtered.map(country => {
-    return <CountryItem key={country.alpha3Code} name={country.name} />;
-  });
+  return (
+    <ListGroup variant="flush">
+      {countries.filtered.map(country => {
+        return <CountryItem key={country.alpha3Code} name={country.name} />;
+      })}
+    </ListGroup>
+  );
 }
 
 export default CountryList;
