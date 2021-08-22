@@ -10,13 +10,11 @@ function CountryList() {
     setCountries(await getAllCountries());
   }, []);
 
-  if (countries) {
-    return countries.map(country => {
-      return <CountryItem key={country.alpha3Code} name={country.name} />;
-    });
-  } else {
-    return null;
-  }
+  if (!countries) return null;
+
+  return countries.map(country => {
+    return <CountryItem key={country.alpha3Code} name={country.name} />;
+  });
 }
 
 export default CountryList;
