@@ -18,7 +18,7 @@ function CountryItem({ country }) {
           pathname: '/details',
           state: country,
         }}>
-        <Image src={country.flag} style={imgStyle} rounded />
+        <Image src={country.flag} style={imgStyle} thumbnail />
         {country.name}
       </Link>
     </ListGroup.Item>

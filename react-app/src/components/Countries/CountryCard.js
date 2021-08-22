@@ -13,7 +13,7 @@ function CountryCard({ country }) {
   };
 
   return (
-    <Card style={{ width: '20rem' }}>
+    <Card>
       <Card.Img variant="top" src={country.flag} />
       <Card.Header>
         <b>{country.name}</b>

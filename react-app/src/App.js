@@ -8,8 +8,8 @@ import Search from './Pages/Search';
 
 function App() {
   return (
-    <Container fluid>
-      <Row className="justify-content-sm-center">
+    <Container>
+      <Row>
         <Col>
           <Router>
             <Switch>
