@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from 'react-router-dom';
 
-function CountryItem(props) {
-  return <ListGroup.Item>{props.name}</ListGroup.Item>;
+function CountryItem({ name }) {
+  return (
+    <ListGroup.Item>
+      <Link to="/details">{name}</Link>
+    </ListGroup.Item>
+  );
 }
 
 CountryItem.propTypes = {
