@@ -6,7 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 function CountryCard({ country }) {
   return (
-    <Card style={{ width: '36rem' }}>
+    <Card style={{ width: '30rem' }}>
       <Card.Img variant="top" src={country.flag} />
       <Card.Header>
         <b>{country.name}</b>
