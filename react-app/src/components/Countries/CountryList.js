@@ -17,7 +17,7 @@ function CountryList() {
   return (
     <ListGroup variant="flush">
       {countries.filtered.map(country => {
-        return <CountryItem key={country.alpha3Code} name={country.name} />;
+        return <CountryItem key={country.alpha3Code} country={country} />;
       })}
     </ListGroup>
   );

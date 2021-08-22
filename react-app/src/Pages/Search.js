@@ -7,12 +7,10 @@ function Search() {
   const [countries, setCountries] = useState();
 
   return (
-    <div>
-      <CountriesContext.Provider value={{ countries, setCountries }}>
-        <CountryFilter />
-        <CountryList />
-      </CountriesContext.Provider>
-    </div>
+    <CountriesContext.Provider value={{ countries, setCountries }}>
+      <CountryFilter />
+      <CountryList />
+    </CountriesContext.Provider>
   );
 }
 
