@@ -8,9 +8,9 @@ import Search from './Pages/Search';
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Row className="justify-content-sm-center">
-        <Col sm="auto">
+        <Col>
           <Router>
             <Switch>
               <Route exact path="/">

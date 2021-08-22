@@ -14,7 +14,7 @@ function CountryFilter() {
 
   return (
     <Form>
-      <Form.Group className="mb-3">
+      <Form.Group>
         <Form.Control type="text" onChange={changeHandle} placeholder="Type to filter out" />
       </Form.Group>
     </Form>

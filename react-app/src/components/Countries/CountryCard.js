@@ -13,7 +13,7 @@ function CountryCard({ country }) {
   };
 
   return (
-    <Card style={{ width: '30rem' }}>
+    <Card style={{ width: '20rem' }}>
       <Card.Img variant="top" src={country.flag} />
       <Card.Header>
         <b>{country.name}</b>
@@ -30,7 +30,7 @@ function CountryCard({ country }) {
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Region: </b>
-            {country.region}
+            {country.region}, {country.subregion}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Borders: </b>
