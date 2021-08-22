@@ -1,10 +1,10 @@
 import React from 'react';
-import RepositoryList from '../Components/GitHubRepos/RepositoryList';
+import CountryList from '../Components/Countries/CountryList';
 
 function Search() {
   return (
     <div>
-      <RepositoryList />
+      <CountryList />
     </div>
   );
 }

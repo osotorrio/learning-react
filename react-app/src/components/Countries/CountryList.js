@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getAllCountries } from '../../Modules/countriesApi';
-import RepositoryItem from './RepositoryItem';
+import CountryItem from './CountryItem';
 
-function RepositoryList() {
+function CountryList() {
   const [countries, setCountries] = useState([]);
 
   useEffect(async () => {
@@ -10,8 +10,8 @@ function RepositoryList() {
   }, []);
 
   return countries.map(country => {
-    return <RepositoryItem key={country.alpha3Code} name={country.name} />;
+    return <CountryItem key={country.alpha3Code} name={country.name} />;
   });
 }
 
-export default RepositoryList;
+export default CountryList;

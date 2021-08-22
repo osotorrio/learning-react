@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function RepositoryItem(props) {
+function CountryItem(props) {
   return <div>{props.name}</div>;
 }
 
-RepositoryItem.propTypes = {
+CountryItem.propTypes = {
   name: PropTypes.string,
 };
 
-export default RepositoryItem;
+export default CountryItem;
