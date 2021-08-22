@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { getRepos } from '../../Helpers/gitHubApi';
+import { getAllCountries } from '../../Modules/countriesApi';
 import RepositoryItem from './RepositoryItem';
 
 function RepositoryList() {
-  const [repos, setRepos] = useState([]);
+  const [countries, setCountries] = useState([]);
 
   useEffect(async () => {
-    const result = await getRepos('mgarcia');
-    setRepos(result);
+    setCountries(await getAllCountries());
   }, []);
 
-  return repos.map(repo => {
-    return <RepositoryItem key={repo.id} repoName={repo.name} />;
+  return countries.map(country => {
+    return <RepositoryItem key={country.alpha3Code} name={country.name} />;
   });
 }
 

@@ -1,5 +1,12 @@
-function RepositoryItem(repoName) {
-  return <h3>{repoName}</h3>;
+import PropTypes from 'prop-types';
+import React from 'react';
+
+function RepositoryItem(props) {
+  return <div>{props.name}</div>;
 }
+
+RepositoryItem.propTypes = {
+  name: PropTypes.string,
+};
 
 export default RepositoryItem;
