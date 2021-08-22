@@ -5,15 +5,15 @@ function CountryFilter() {
   const { countries, setCountries } = useContext(CountriesContext);
 
   const changeHandle = e => {
-    const filteredCountries = countries.filter(country =>
-      country.name.toLowerCase().startsWith(e.target.value)
+    const filtered = countries.all.filter(country =>
+      country.name.toLowerCase().startsWith(e.target.value.toLowerCase())
     );
-    setCountries(filteredCountries);
+    setCountries({ ...countries, filtered });
   };
 
   return (
     <form>
-      <input onChange={changeHandle} />
+      <input onChange={changeHandle} placeholder="Type to filter out" />
     </form>
   );
 }

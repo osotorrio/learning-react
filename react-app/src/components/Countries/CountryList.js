@@ -7,12 +7,13 @@ function CountryList() {
   const { countries, setCountries } = useContext(CountriesContext);
 
   useEffect(async () => {
-    setCountries(await getAllCountries());
+    const data = await getAllCountries();
+    setCountries({ all: data, filtered: data });
   }, []);
 
   if (!countries) return null;
 
-  return countries.map(country => {
+  return countries.filtered.map(country => {
     return <CountryItem key={country.alpha3Code} name={country.name} />;
   });
 }
