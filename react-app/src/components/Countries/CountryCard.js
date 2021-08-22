@@ -3,8 +3,15 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useHistory } from 'react-router-dom';
 
 function CountryCard({ country }) {
+  const history = useHistory();
+
+  const clickHandler = () => {
+    history.push('/');
+  };
+
   return (
     <Card style={{ width: '30rem' }}>
       <Card.Img variant="top" src={country.flag} />
@@ -39,7 +46,9 @@ function CountryCard({ country }) {
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>
-      <Button variant="primary">Search another country</Button>
+      <Button variant="primary" onClick={clickHandler}>
+        Search another country
+      </Button>
     </Card>
   );
 }
