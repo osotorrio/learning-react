@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navigation from './Components/Navigation';
-import About from './Pages/About';
-import Home from './Pages/Home';
+import Details from './Pages/Details';
+import Search from './Pages/Search';
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Search />
           </Route>
-          <Route path="/about">
-            <About />
+          <Route path="/details">
+            <Details />
           </Route>
         </Switch>
       </Router>

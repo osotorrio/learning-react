@@ -11,10 +11,10 @@ function Navigation() {
   return (
     <Nav onSelect={selectedKey => handleSelection(selectedKey)}>
       <Nav.Item>
-        <Nav.Link eventKey="/">Home</Nav.Link>
+        <Nav.Link eventKey="/">Search</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="/About">About</Nav.Link>
+        <Nav.Link eventKey="/Details">Details</Nav.Link>
       </Nav.Item>
     </Nav>
   );
