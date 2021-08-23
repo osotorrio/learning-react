@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CountryFilter from '../Components/Countries/CountryFilter';
-import CountryList from '../Components/Countries/CountryList';
+import CountryFilter from '../Components/CountryFilter';
+import CountryList from '../Components/CountryList';
 import { CountriesContext } from '../Contexts/CountriesContext';
 
 function Search() {

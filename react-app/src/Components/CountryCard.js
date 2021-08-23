@@ -38,11 +38,11 @@ function CountryCard({ country }) {
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Area: </b>
-            {country.area} km2
+            {new Intl.NumberFormat('de-DE').format(country.area)} km2
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Population: </b>
-            {country.population} people
+            {new Intl.NumberFormat('de-DE').format(country.population)} people
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>

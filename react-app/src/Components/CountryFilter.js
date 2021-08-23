@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
-import { CountriesContext } from '../../Contexts/CountriesContext';
+import { CountriesContext } from '../Contexts/CountriesContext';
 
 function CountryFilter() {
   const { countries, setCountries } = useContext(CountriesContext);
