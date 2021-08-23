@@ -4,13 +4,13 @@ import Image from 'react-bootstrap/Image';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
 
-function CountryItem({ country }) {
-  const imgStyle = {
-    width: '3rem',
-    height: '3rem',
-    margin: '.50rem',
-  };
+const imageStyle = {
+  width: '3rem',
+  height: '3rem',
+  margin: '.50rem',
+};
 
+function CountryItem({ country }) {
   return (
     <ListGroup.Item>
       <Link
@@ -18,7 +18,7 @@ function CountryItem({ country }) {
           pathname: '/details',
           state: country,
         }}>
-        <Image src={country.flag} style={imgStyle} thumbnail />
+        <Image src={country.flag} style={imageStyle} thumbnail />
         {country.name}
       </Link>
     </ListGroup.Item>

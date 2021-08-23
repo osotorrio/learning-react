@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 function CountryCard({ country }) {
   const history = useHistory();
 
-  const clickHandler = () => {
+  const goToSearchPage = () => {
     history.push('/');
   };
 
@@ -54,7 +54,7 @@ function CountryCard({ country }) {
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>
-      <Button variant="primary" onClick={clickHandler}>
+      <Button variant="primary" onClick={goToSearchPage}>
         Search another country
       </Button>
     </Card>

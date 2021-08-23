@@ -5,7 +5,7 @@ import { CountriesContext } from '../Contexts/CountriesContext';
 function CountryFilter() {
   const { countries, setCountries } = useContext(CountriesContext);
 
-  const changeHandle = e => {
+  const filterCountriesOut = e => {
     const filtered = countries.all.filter(country =>
       country.name.toLowerCase().startsWith(e.target.value.toLowerCase())
     );
@@ -15,7 +15,11 @@ function CountryFilter() {
   return (
     <Form>
       <Form.Group>
-        <Form.Control type="text" onChange={changeHandle} placeholder="Type to filter out" />
+        <Form.Control
+          type="text"
+          onChange={filterCountriesOut}
+          placeholder="Type to filter out countries"
+        />
       </Form.Group>
     </Form>
   );

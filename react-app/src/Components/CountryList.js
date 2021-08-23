@@ -1,16 +1,10 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { CountriesContext } from '../Contexts/CountriesContext';
-import { getAllCountries } from '../Modules/countriesApi';
 import CountryItem from './CountryItem';
 
 function CountryList() {
-  const { countries, setCountries } = useContext(CountriesContext);
-
-  useEffect(async () => {
-    const data = await getAllCountries();
-    setCountries({ all: data, filtered: data });
-  }, []);
+  const { countries } = useContext(CountriesContext);
 
   if (!countries) return null;
 
