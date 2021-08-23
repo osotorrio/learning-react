@@ -1,12 +1,13 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-function CountryCard({ country }) {
+function CountryCard() {
   const history = useHistory();
+  const { selected } = useSelector(state => state.countries);
 
   const goToSearchPage = () => {
     history.push('/');
@@ -14,19 +15,19 @@ function CountryCard({ country }) {
 
   return (
     <Card>
-      <Card.Img variant="top" src={country.flag} />
+      <Card.Img variant="top" src={selected.flag} />
       <Card.Header>
-        <b>{country.name}</b>
+        <b>{selected.name}</b>
       </Card.Header>
       <Card.Body>
         <ListGroup variant="flush">
           <ListGroup.Item>
             <b>Capital: </b>
-            {country.capital ? country.capital : country.name}
+            {selected.capital ? selected.capital : selected.name}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Languages: </b>
-            {country.languages
+            {selected.languages
               .map(language => {
                 return language.name;
               })
@@ -34,23 +35,23 @@ function CountryCard({ country }) {
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Country Codes: </b>
-            {country.alpha2Code}, {country.alpha3Code}
+            {selected.alpha2Code}, {selected.alpha3Code}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Region: </b>
-            {country.region}, {country.subregion}
+            {selected.region}, {selected.subregion}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Borders: </b>
-            {country.borders.length > 0 ? country.borders.join(', ') : 'None'}
+            {selected.borders.length > 0 ? selected.borders.join(', ') : 'None'}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Area: </b>
-            {new Intl.NumberFormat('de-DE').format(country.area)} km2
+            {new Intl.NumberFormat('de-DE').format(selected.area)} km2
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Population: </b>
-            {new Intl.NumberFormat('de-DE').format(country.population)} people
+            {new Intl.NumberFormat('de-DE').format(selected.population)} people
           </ListGroup.Item>
         </ListGroup>
       </Card.Body>
@@ -60,9 +61,5 @@ function CountryCard({ country }) {
     </Card>
   );
 }
-
-CountryCard.propTypes = {
-  country: PropTypes.object.isRequired,
-};
 
 export default CountryCard;

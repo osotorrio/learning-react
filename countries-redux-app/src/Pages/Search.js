@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import CountryFilter from '../Components/CountryFilter';
 import CountryList from '../Components/CountryList';
-import { CountriesContext } from '../Contexts/CountriesContext';
 import { getAllCountries } from '../Modules/countriesApi';
+import { add } from '../Redux/countrySlice';
 
 function Search() {
-  const [countries, setCountries] = useState();
+  const dispatch = useDispatch();
 
   useEffect(async () => {
-    const data = await getAllCountries();
-    setCountries({ all: data, filtered: data });
+    const countries = await getAllCountries();
+    dispatch(add(countries));
   }, []);
 
   return (
-    <CountriesContext.Provider value={{ countries, setCountries }}>
+    <>
       <CountryFilter />
       <CountryList />
-    </CountriesContext.Provider>
+    </>
   );
 }
 

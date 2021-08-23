@@ -1,15 +1,12 @@
-import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
-import { CountriesContext } from '../Contexts/CountriesContext';
+import { useDispatch } from 'react-redux';
+import { filter } from '../Redux/countrySlice';
 
 function CountryFilter() {
-  const { countries, setCountries } = useContext(CountriesContext);
+  const dispatch = useDispatch();
 
   const filterCountriesOut = e => {
-    const filtered = countries.all.filter(country =>
-      country.name.toLowerCase().startsWith(e.target.value.toLowerCase())
-    );
-    setCountries({ ...countries, filtered });
+    dispatch(filter(e.target.value));
   };
 
   return (
