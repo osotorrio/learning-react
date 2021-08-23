@@ -21,12 +21,20 @@ function CountryCard({ country }) {
       <Card.Body>
         <ListGroup variant="flush">
           <ListGroup.Item>
-            <b>Country Codes: </b>
-            {country.alpha2Code}, {country.alpha3Code}
-          </ListGroup.Item>
-          <ListGroup.Item>
             <b>Capital: </b>
             {country.capital}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <b>Languages: </b>
+            {country.languages
+              .map(language => {
+                return language.name;
+              })
+              .join(', ')}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <b>Country Codes: </b>
+            {country.alpha2Code}, {country.alpha3Code}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Region: </b>
