@@ -22,7 +22,7 @@ function CountryCard({ country }) {
         <ListGroup variant="flush">
           <ListGroup.Item>
             <b>Capital: </b>
-            {country.capital}
+            {country.capital ? country.capital : country.name}
           </ListGroup.Item>
           <ListGroup.Item>
             <b>Languages: </b>
