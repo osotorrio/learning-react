@@ -11,14 +11,14 @@ function useGetAllCountries() {
       const response = await axios.get(host.concat('/all'));
 
       if (response.status === 200) {
-        setResult({ error: null, data: response.data });
+        setResult({ error: null, data: response.data, loading: false });
       } else {
         console.error(`API responded with an error: ${response.status}`);
-        setResult({ error: response.statusText, data: null });
+        setResult({ error: response.statusText, data: null, loading: false });
       }
     } catch (error) {
       console.error(error);
-      setResult({ error: error, data: null });
+      setResult({ error: error, data: null, loading: false });
     }
   }, []);
 
