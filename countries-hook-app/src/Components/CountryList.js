@@ -15,7 +15,7 @@ function CountryList({ countries }) {
 }
 
 CountryList.propTypes = {
-  countries: PropTypes.object.isRequired,
+  countries: PropTypes.array,
 };
 
 export default CountryList;
